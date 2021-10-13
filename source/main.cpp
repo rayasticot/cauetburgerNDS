@@ -20,7 +20,11 @@ int main(int argc, char **argv) {
 
 	NF_InitTiledBgBuffers();
 	NF_InitTiledBgSys(0);
+	NF_InitTiledBgSys(1);
 
+	NF_LoadTiledBg("bg/cauetfond", "cauetfont", 256, 256);
+	NF_CreateTiledBg(1, 0, "cauetfont");
+	NF_ShowBg(1, 0);
 
 	NF_InitTextSys(0);
 	NF_LoadTextFont("fnt/default", "default", 256, 256, 0);

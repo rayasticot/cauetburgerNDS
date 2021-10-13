@@ -14,6 +14,7 @@ extern int flor;
 int tim;
 
 void minigame1(){
+	NF_HideBg(1, 0);
 	tim = 300 - flor*6;
 	win = -2;
 	NF_MoveSprite(1, 0, 0*64, 192);

@@ -21,6 +21,7 @@ bool skip = false;
 void Elevator(){
 	elevator eleve;
 	while(1){
+		NF_ShowBg(1, 0);
 		sprintf(text, "floor %d", flor);
 		NF_WriteText(0, 0, 1, 1, text);
 		NF_UpdateTextLayers();
