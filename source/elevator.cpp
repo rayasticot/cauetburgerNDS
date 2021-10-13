@@ -7,21 +7,27 @@
 #include "elevator.hpp"
 
 int win = -2;
+int flor = 0;
 
 void elevatorLoop();
 void flip(bool oio);
 
 int time = 0;
 int frame = 0;
+char text[9];
 bool rev = false;
 bool skip = false;
 
 void Elevator(){
-	
 	elevator eleve;
 	while(1){
+		sprintf(text, "floor %d", flor);
+		NF_WriteText(0, 0, 1, 1, text);
+		NF_UpdateTextLayers();
 		eleve.Update();
+		flor += 1;
 		time = 0;
+		
 		while(time < 300){
 			elevatorLoop();
 		}

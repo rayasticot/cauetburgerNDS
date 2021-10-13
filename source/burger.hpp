@@ -3,8 +3,8 @@
 
 class Burger{
 	private:
-		int posx;
-		int posy;
+		int posx = rand() % 256;
+		int posy = rand() % 192;
 		int ids;
 		bool auth = true;
 		void onClick(){
@@ -15,10 +15,8 @@ class Burger{
 	public:
 		int condition = false;
 		int types = 0;
-		Burger(int id, int pos_x, int pos_y, int type){
-			NF_CreateSprite(1, id, type, type, pos_x, pos_y);
-			posx = pos_x;
-			posy = pos_y;
+		Burger(int id, int type){
+			NF_CreateSprite(1, id, type, type, posx, posy);
 			ids = id;
 			types = type;
 		};
