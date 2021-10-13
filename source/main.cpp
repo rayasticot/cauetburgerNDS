@@ -3,7 +3,8 @@
 #include <nf_lib.h>
 #include <time.h>
 
-#include "ulysse.h"
+#include "declarations.hpp"
+#include "function.hpp"
 
 int main(int argc, char **argv) {
 	
@@ -18,7 +19,7 @@ int main(int argc, char **argv) {
 	loadSprite(1, "cauettourne", 0, 64, 32); // charge un sprite
 	loadSprite(1, "anelka", 1, 32, 32);
 	
-	Elevator();
+	Elevator(); //Elevator.cpp
 	
 	
 	while(1) {

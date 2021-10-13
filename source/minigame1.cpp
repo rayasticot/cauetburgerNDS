@@ -4,8 +4,10 @@
 #include <time.h>
 
 
-#include "burgos.h"
-#include "burger.h"
+#include "burgos.hpp"
+#include "burger.hpp"
+#include "function.hpp"
+
 
 extern int win;
 
@@ -28,17 +30,21 @@ void minigame1(){
 		
 		if(bj2.condition == true){
 			win += 1;
+			bj2.condition = false;
 		}
 		if(bj0.condition == true){
 			win -= 4;
+			bj0.condition = false;
 		}
 		if(bj1.condition == true){
 			win -= 4;
+			bj1.condition = false;
 		}
 		if(bj3.condition == true){
 			win += 1;
+			bj3.condition = false;
 		}
-		
+		mainLoop();
 		burgosLoop();
 	}
 	bj1.end();

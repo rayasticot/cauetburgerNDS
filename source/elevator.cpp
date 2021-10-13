@@ -2,13 +2,14 @@
 #include <nds.h>
 #include <nf_lib.h>
 
-#include "elevator.h"
+#include "function.hpp"
+
+#include "elevator.hpp"
 
 int win = -2;
 
 void elevatorLoop();
 void flip(bool oio);
-void ElevatorRegular();
 
 int time = 0;
 int frame = 0;
@@ -17,10 +18,6 @@ bool skip = false;
 
 void Elevator(){
 	
-	ElevatorRegular();
-	
-}
-void ElevatorRegular(){
 	elevator eleve;
 	while(1){
 		eleve.Update();
@@ -36,15 +33,10 @@ void ElevatorRegular(){
 			eleve.winning = 1;
 		}
 	}
+	
 }
 void elevatorLoop(){
-	NF_SpriteOamSet(0);
-	NF_SpriteOamSet(1);
-
-	swiWaitForVBlank();
-
-	oamUpdate(&oamMain);
-	oamUpdate(&oamSub);
+	mainLoop();
 	time += 1;
 	if(skip == false){
 		if(frame == 7){
