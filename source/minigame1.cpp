@@ -14,8 +14,9 @@ extern int flor;
 int tim;
 
 void minigame1(){
+	NF_PlayRawSound(1, 127, 64, false, 0);
 	NF_HideBg(1, 0);
-	tim = 300 - flor*6;
+	tim = 210 - flor*6;
 	win = -2;
 	NF_MoveSprite(1, 0, 0*64, 192);
 	NF_MoveSprite(1, 1, 1*64, 192);
@@ -55,4 +56,5 @@ void minigame1(){
 	bj2.end();
 	bj3.end();
 	bj0.end();
+	soundKill(0);
 }
