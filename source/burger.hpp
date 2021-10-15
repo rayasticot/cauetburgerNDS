@@ -3,8 +3,8 @@
 
 class Burger{
 	private:
-		int posx = rand() % 256;
-		int posy = rand() % 192;
+		int posx = rand() % 192;
+		int posy = rand() % 160;
 		int ids;
 		bool auth = true;
 		void onClick(){

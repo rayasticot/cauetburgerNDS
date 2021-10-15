@@ -6,7 +6,7 @@
 #include "declarations.hpp"
 #include "function.hpp"
 
-int seed = 12904;
+int seed = 13904;
 
 int main(int argc, char **argv) {
 	
