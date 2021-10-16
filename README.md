@@ -2,7 +2,7 @@
 Jeu Cauet Burger pour la Nintendo DS créé avec la librairie NFLib
 https://sourceforge.net/projects/nflib/
 ## Version actuelle
--1 mini-jeu
+-2 mini-jeux
 
 -Système de vies (gameover pas encore implémenté)
 
