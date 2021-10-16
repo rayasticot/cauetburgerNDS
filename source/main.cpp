@@ -6,7 +6,7 @@
 #include "declarations.hpp"
 #include "function.hpp"
 
-int seed = 13904;
+int seed = 1304;
 
 int main(int argc, char **argv) {
 	
@@ -24,6 +24,8 @@ int main(int argc, char **argv) {
 
 	NF_LoadTiledBg("bg/cauetburger", "cauetfont", 256, 256);
 	NF_CreateTiledBg(1, 0, "cauetfont");
+	NF_LoadTiledBg("bg/green", "green", 256, 256);
+	NF_CreateTiledBg(1, 1, "green");
 	NF_ShowBg(1, 0);
 
 	NF_InitTextSys(0);
@@ -36,8 +38,12 @@ int main(int argc, char **argv) {
 	NF_LoadRawSound("snd/stage", 1, 11025, 0);
 
 
-	loadSprite(1, "spr/cauettourne", 0, 64, 32); // charge un sprite
+	loadSprite(1, "spr/cauettourne", 0, 64, 32, true); // charge un sprite
 	loadSprite(1, "spr/anelka", 1, 32, 32);
+	loadSprite(1, "spr/ball", 2, 16, 16);
+
+	NF_LoadSpritePal("spr/black", 3);
+	NF_VramSpritePal(1, 3, 3);
 	
 	srand(seed);
 

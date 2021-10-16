@@ -3,8 +3,8 @@
 #include <nf_lib.h>
 #include <time.h>
 
+touchPosition StylusA;
 
-#include "burgos.hpp"
 #include "burger.hpp"
 #include "function.hpp"
 
@@ -16,18 +16,15 @@ int tim;
 void minigame1(){
 	NF_PlayRawSound(1, 127, 64, false, 0);
 	NF_HideBg(1, 0);
-	tim = 210 - flor*6;
+	NF_ShowBg(1, 1);
 	win = -2;
-	NF_MoveSprite(1, 0, 0*64, 192);
-	NF_MoveSprite(1, 1, 1*64, 192);
-	NF_MoveSprite(1, 2, 2*64, 192);
-	NF_MoveSprite(1, 3, 3*64, 192);
+	switchGame();
 	
 	Burger bj0(4, 0);
 	Burger bj1(5, 0);
 	Burger bj2(6, 1);
 	Burger bj3(7, 1);
-	for(int i = 0; i < tim; i++){
+	for(int i = 0; i < 210; i++){
 		bj1.Check();
 		bj2.Check();
 		bj3.Check();
@@ -50,7 +47,9 @@ void minigame1(){
 			bj3.condition = false;
 		}
 		mainLoop();
-		burgosLoop();
+		scanKeys();
+		touchRead(&StylusA);
+
 	}
 	bj1.end();
 	bj2.end();

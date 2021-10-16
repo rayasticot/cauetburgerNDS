@@ -22,10 +22,10 @@ class Burger{
 		};
 		void Check(){
 			if(KEY_TOUCH & keysDown()){
-				if(Stylus.px >= posx){
-					if(Stylus.px <= posx+64-types*32){
-						if(Stylus.py >= posy){
-							if(Stylus.py <= posy+32){
+				if(StylusA.px >= posx){
+					if(StylusA.px <= posx+64-types*32){
+						if(StylusA.py >= posy){
+							if(StylusA.py <= posy+32){
 								if(auth == true){
 									onClick();
 								}

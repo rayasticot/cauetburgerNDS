@@ -22,6 +22,7 @@ void Elevator(){
 	elevator eleve;
 	while(1){
 		NF_PlayRawSound(0, 127, 64, false, 0);
+		NF_HideBg(1, 1);
 		NF_ShowBg(1, 0);
 		sprintf(text, "floor %d", flor);
 		NF_WriteText(0, 0, 1, 1, text);
@@ -33,7 +34,15 @@ void Elevator(){
 		while(time < 120){
 			elevatorLoop();
 		}
-		minigame1();
+		int game = rand() % 2;
+		switch(game){
+			case 0:
+				minigame1();
+				break;
+			case 1:
+				minigame2();
+				break;
+		}
 		if(win >= 0){
 			eleve.winning = 2;
 		}
