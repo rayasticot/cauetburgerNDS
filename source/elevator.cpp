@@ -34,13 +34,16 @@ void Elevator(){
 		while(time < 120){
 			elevatorLoop();
 		}
-		int game = rand() % 2;
+		int game = rand() % 2; //Remplacez "rand() % 2" par 2 si vous voulez jouer au 3ème mini-jeu (pas fini)
 		switch(game){
 			case 0:
 				minigame1();
 				break;
 			case 1:
 				minigame2();
+				break;
+			case 2:
+				minigame3();
 				break;
 		}
 		if(win >= 0){
