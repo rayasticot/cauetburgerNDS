@@ -5,8 +5,8 @@
 
 touchPosition StylusA;
 
-#include "burger.hpp"
 #include "function.hpp"
+#include "minigame1.hpp"
 
 
 extern int win;

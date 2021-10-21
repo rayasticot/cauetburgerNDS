@@ -1,5 +1,5 @@
-#ifndef FLY_HPP
-#define FLY_HPP
+#ifndef MINIGAME3_HPP
+#define MINIGAME3_HPP
 class Fly{
     private:
         int x = 112;

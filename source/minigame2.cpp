@@ -9,8 +9,8 @@ int hole_y = 16;
 int grab;
 extern int win;
 
-#include "ball.hpp"
 #include "function.hpp"
+#include "minigame2.hpp"
 
 
 void minigame2(){

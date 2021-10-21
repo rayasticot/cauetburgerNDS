@@ -6,7 +6,7 @@ int ground_y = 180;
 
 
 #include "function.hpp"
-#include "fly.hpp"
+#include "minigame3.hpp"
 
 void minigame3(){
     NF_PlayRawSound(1, 127, 64, false, 0);
