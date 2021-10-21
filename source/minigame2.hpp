@@ -25,7 +25,7 @@ class Ball{
             }
             NF_CreateSprite(1, id, 2, 2, posx, posy);
         };
-        void Check(){ // Ce code pue la merde, il faut le remplacer
+        void Check(){ // Qui est con
             if(collisionCheck(posx-32, posy-32, 64, 64, StylusB.px, StylusB.py, keysHeld()) == true){
                 if(grab == 0){
                     grab = idsa;
