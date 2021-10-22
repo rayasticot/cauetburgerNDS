@@ -30,9 +30,9 @@ class Tuyo{
         int y;
         int ids;
     public:
-        Tuyo(int side, int id){
-            y = side*192;
-            x = 256;
+        Tuyo(int id, int start, int height){
+            y = height;
+            x = start;
             ids = id;
             NF_CreateSprite(1, id, 4, 4, x, y);
         }
