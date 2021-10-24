@@ -34,7 +34,7 @@ void Elevator(){
 		while(time < 120){
 			elevatorLoop();
 		}
-		int game = 2; //Remplacez "rand() % 2" par 2 si vous voulez jouer au 3ème mini-jeu (pas fini)
+		int game = rand() % 3; // minijeu 3 pas encore fini
 		switch(game){
 			case 0:
 				minigame1();

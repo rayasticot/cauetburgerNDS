@@ -6,7 +6,7 @@
 #include "declarations.hpp"
 #include "function.hpp"
 
-int seed = 1304;
+int seed = 1312;
 
 int main(int argc, char **argv) {
 	
@@ -41,7 +41,7 @@ int main(int argc, char **argv) {
 	loadSprite(1, "spr/cauettourne", 0, 64, 32, true); // charge un sprite
 	loadSprite(1, "spr/anelka", 1, 32, 32);
 	loadSprite(1, "spr/ball", 2, 16, 16);
-	loadSprite(1, "spr/maison", 4, 32, 32);
+	loadSprite(1, "spr/maison", 4, 32, 64);
 
 	NF_LoadSpritePal("spr/black", 3);
 	NF_VramSpritePal(1, 3, 3);
@@ -58,5 +58,4 @@ int main(int argc, char **argv) {
 	}
 
 	return 0; 
-
 }

@@ -6,6 +6,7 @@ class Fly{
         int y = 50;
         double speed = 0.5;
         int acc_y = -15;
+        bool stuck = false;
     public:
         double t = 0;
         Fly(){
@@ -15,14 +16,20 @@ class Fly{
             t = t/60;
             y += acc_y*speed;
             acc_y += 1;
-            if(KEY_A & keysDown()){
+            if(KEY_TOUCH & keysDown()){
                 acc_y = -10;
             }
             if(y >= ground_y){
-                NF_Error(1, "salope", 3);
+                win = -2;
+                stuck = true;
             }
-            NF_MoveSprite(1, 12, x, y);
+            if(stuck == false){
+                NF_MoveSprite(1, 12, x, y);
+            }
         };
+        void End(){
+            NF_DeleteSprite(1, 12);
+        }
 };
 class Tuyo{
     private:
@@ -39,6 +46,10 @@ class Tuyo{
         void Check(){
             x -= 3;
             NF_MoveSprite(1, ids, x, y);
+
+        }
+        void End(){
+            NF_DeleteSprite(1, ids);
         }
 };
 #endif
