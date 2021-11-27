@@ -33,6 +33,9 @@ void minigame1(){
 		if(bj2.condition == true){
 			win += 1;
 			bj2.condition = false;
+			if(win == 0){
+				NF_PlayRawSound(2, 127, 64, false, 0);
+			}
 		}
 		if(bj0.condition == true){
 			win -= 4;
@@ -41,10 +44,14 @@ void minigame1(){
 		if(bj1.condition == true){
 			win -= 4;
 			bj1.condition = false;
+			
 		}
 		if(bj3.condition == true){
 			win += 1;
 			bj3.condition = false;
+			if(win == 0){
+				NF_PlayRawSound(2, 127, 64, false, 0);
+			}
 		}
 		mainLoop();
 		scanKeys();
@@ -55,5 +62,7 @@ void minigame1(){
 	bj2.end();
 	bj3.end();
 	bj0.end();
-	soundKill(0);
+	if(win < 0){
+		NF_PlayRawSound(3, 127, 64, false, 0);
+	}
 }

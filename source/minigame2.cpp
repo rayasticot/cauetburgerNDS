@@ -30,6 +30,9 @@ void minigame2(){
         scanKeys();
 	    touchRead(&StylusB);
     }
+    if(win < 0){
+		NF_PlayRawSound(3, 127, 64, false, 0);
+    }
     NF_DeleteSprite(1, 8);
     NF_DeleteSprite(1, 9);
     NF_DeleteSprite(1, 11);

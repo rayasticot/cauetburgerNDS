@@ -46,6 +46,9 @@ class Ball{
                 if(posy <= hole_y+16){
                     if(auth == true){
                         win += 1;
+                        if(win == 0){
+				            NF_PlayRawSound(2, 127, 64, false, 0);
+			            }
                         NF_ShowSprite(1, ids, false);
                         auth = false;
                     }

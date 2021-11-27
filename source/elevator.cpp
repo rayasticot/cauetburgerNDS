@@ -43,7 +43,7 @@ void Elevator(){
 				minigame2();
 				break;
 			case 2:
-				minigame3();
+				minigame4();
 				break;
 		}
 		if(win >= 0){

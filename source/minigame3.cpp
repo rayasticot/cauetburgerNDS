@@ -3,10 +3,16 @@
 #include <nf_lib.h>
 
 int ground_y = 180;
+int status = 0;
+int poins[3];
 extern int win;
+char sag[18];
+char fag[18];
 
 #include "function.hpp"
 #include "minigame3.hpp"
+
+void StatusUpdate(int x);
 
 void minigame3(){
     win = 1;
@@ -37,16 +43,22 @@ void minigame3(){
         fl.t = i;
         fl.Check();
         
+        ty1.setPoint(0);
+        StatusUpdate(poins[0]);
         ty1.Check();
         ty2.Check();
         ty3.Check();
         ty4.Check();
 
+        ty5.setPoint(1);
+        StatusUpdate(poins[1]);
         ty5.Check();
         ty6.Check();
         ty7.Check();
         ty8.Check();
 
+        ty9.setPoint(2);
+        StatusUpdate(poins[2]);
         ty9.Check();
         ty10.Check();
         ty11.Check();
@@ -54,6 +66,10 @@ void minigame3(){
 
         mainLoop();
         scanKeys();
+
+        sprintf(sag, "status %d", status);
+		NF_WriteText(0, 1, 1, 17, sag);
+		NF_UpdateTextLayers();
     }
         
     ty1.End();
@@ -69,4 +85,14 @@ void minigame3(){
 
     fl.End();
 
+}
+void StatusUpdate(int x){
+    if(x < 0 && x > -3){
+        if(status == 2){
+            status = 0;
+        }
+        else{
+            status += 1;
+        }
+    }
 }
