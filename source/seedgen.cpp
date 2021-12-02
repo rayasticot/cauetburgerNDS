@@ -3,7 +3,7 @@
 #include <nf_lib.h>
 
 touchPosition StylusC;
-int seedpart[4] = {0, 0, 0, 0};
+int seedpart[4];
 int in = 0;
 int buff;
 
@@ -16,8 +16,9 @@ int seedGen(){
     while(1){
         mainLoop();
         scanKeys();
+	    touchRead(&StylusC);
         if(KEY_TOUCH & keysDown()){
-            seedpart[in] = StylusC.px+StylusC.py;
+            seedpart[in] = StylusC.px;
             in += 1;
         }
         if(KEY_START & keysDown()){
